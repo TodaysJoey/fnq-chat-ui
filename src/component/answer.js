@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import logoIcon from "../assets/logo.png";
 
 class Answer extends Component {
   constructor(props) {
@@ -11,9 +12,12 @@ class Answer extends Component {
 
   render() {
     return (
-      <div className="test">
-        <div className="msgBox" id={this.state.id}>
-          <p>{this.state.chatValue}</p>
+      <div className="answerChat" key={this.state.id}>
+        <div className="answerUsericon">
+          <img src={logoIcon} width="40px" height="40px" alt="user" />
+        </div>
+        <div className="msgBox">
+          <p key={this.state.id}>{this.state.chatValue}</p>
         </div>
       </div>
     );
