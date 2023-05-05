@@ -45,7 +45,8 @@
 
 .chat {
   width: 375px;
-  height: 615px;
+  height: 520px;
+  overflow: auto;
   background-color: #fff;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
