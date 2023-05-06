@@ -53,7 +53,7 @@ const Array = (e) => {
 
     // 질문이 등록됐을을 때, axios 호출해서 답변을 받아온다.
     axios
-      .post("http://localhost:3000/chat/call", req)
+      .post("http://127.0.0.1:3000/chat/call", req)
       .then((result) => {
         const newList = resList.concat(result.data.message);
         setResList(newList);

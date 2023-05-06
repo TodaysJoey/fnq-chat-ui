@@ -92,7 +92,6 @@
   margin-left: 10px;
   border: none;
   background-image: url("./assets/send.png");
-  background-repeat: no-repeat;
   background-color: #45BF6D; /* make the button transparent */
   background-repeat: no-repeat;  /* make the background image appear only once */
   background-position: 8px 8px;  /* equivalent to 'top left' */
@@ -161,6 +160,8 @@
 .answerContainer > .answerChat {
   width: 100%;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .answerContainer > .answerChat > .msgBox {
@@ -213,5 +214,17 @@
   margin-block-start: 5px;
 }
 
-
-
+.answerChat button {
+  width: 110px;
+  height: 20px;
+  text-align: right;
+  font-weight: bold;
+  color: #3BB55A;
+  margin-left: 50px;
+  background-image: url('./assets/download.png');
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border: 1px solid #3BB55A;
+  padding: 3px;
+  background-size: 18px;
+}
