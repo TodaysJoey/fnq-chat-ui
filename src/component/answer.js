@@ -11,9 +11,12 @@ class Answer extends Component {
       id: props.id,
       seq: props.seq,
       answerCode: props.answerCode,
+      answerScript: props.answerScript,
+      exUrl: props.answerUrl,
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.exOpenClick = this.exOpenClick.bind(this);
   }
   handleClick() {
     let req = {
@@ -28,61 +31,65 @@ class Answer extends Component {
         //error
       });
   }
+  exOpenClick() {
+    let url = this.state.exUrl;
+    console.log(url);
+    window.open(url);
+  }
 
   render() {
-    return (
-      <div className="answerChat" key={this.state.id}>
-        <div className="answerUsericon">
-          <img src={logoIcon} width="40px" height="40px" alt="user" />
+    if (this.state.answerScript) {
+      return (
+        <div className="answerChat" key={this.state.id}>
+          <div className="answerUsericon">
+            <img src={logoIcon} width="40px" height="40px" alt="user" />
+          </div>
+          <div className="msgBox">
+            <p key={this.state.id}>{this.state.chatValue}</p>
+          </div>
+          <div className="msgBoxCode">
+            <CopyBlock
+              text={this.state.answerScript}
+              language={"javascript"}
+              showLineNumbers={false}
+              startingLineNumber={true}
+              wrapLongLines={true}
+              theme={nord}
+              customStyle={{
+                width: "250px",
+                height: "250px",
+                overflowY: "scroll",
+                fontSize: "0.75rem",
+              }}
+            />
+            {/* <p key={this.state.id}>{this.state.answerCode}</p> */}
+          </div>
+          <button className="downloadBtn" onClick={this.handleClick}>
+            예제 파일 다운로드
+          </button>
+          <button className="openExBtn" onClick={this.exOpenClick}>
+            새 창에서 열기
+          </button>
         </div>
-        <div className="msgBox">
-          <p key={this.state.id}>{this.state.chatValue}</p>
+      );
+    } else {
+      return (
+        <div className="answerChat" key={this.state.id}>
+          <div className="answerUsericon">
+            <img src={logoIcon} width="40px" height="40px" alt="user" />
+          </div>
+          <div className="msgBox">
+            <p key={this.state.id}>{this.state.chatValue}</p>
+          </div>
+          <button className="downloadBtn" onClick={this.handleClick}>
+            예제 파일 다운로드
+          </button>
+          <button className="openExBtn" onClick={this.exOpenClick}>
+            새 창에서 열기
+          </button>
         </div>
-        <div className="msgBox">
-        <CopyBlock
-          text={this.state.answerCode}
-          language={'html'}
-          showLineNumbers={true}
-          startingLineNumber={true}
-          wrapLongLines={true}
-          theme={nord}
-          customStyle={{
-            height: '250px',
-            overflowY: 'scroll',
-            fontSize: '0.75rem',
-          }}
-        />
-          {/* <p key={this.state.id}>{this.state.answerCode}</p> */}
-        </div>
-        <button className="downloadBtn"onClick={this.handleClick}>예제 파일 다운로드</button>
-      </div>
-    );
-    // if(this.props.id.indexOf("loading") > -1) {
-    //   return(
-    //     <div className="answerChat" key={this.state.id}>
-    //       <div className="answerUsericon">
-    //         <img src={logoIcon} width="40px" height="40px" alt="user" />
-    //       </div>
-    //       <div className="msgBox">
-    //         <img src={loadingImg} width="100px" height="70px" alt="Loading..." />
-    //       </div>
-    //       <button onClick={this.handleClick}>예제 파일 다운로드</button>
-    //     </div>
-    //   );
-    // } else {
-    //   return (
-    //     <div className="answerChat" key={this.state.id}>
-    //       <div className="answerUsericon">
-    //         <img src={logoIcon} width="40px" height="40px" alt="user" />
-    //       </div>
-    //       <div className="msgBox">
-    //         <p key={this.state.id}>{this.state.chatValue}</p>
-    //       </div>
-    //       <button onClick={this.handleClick}>예제 파일 다운로드</button>
-    //     </div>
-    //   );
-    // }
-    
+      );
+    }
   }
 }
 
