@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logoIcon from "../assets/logo.png";
 import axios from "axios";
-import { CopyBlock, nord } from "react-code-blocks";
+import { CopyBlock, github } from "react-code-blocks";
 
 class Answer extends Component {
   constructor(props) {
@@ -34,8 +34,7 @@ class Answer extends Component {
   }
   exOpenClick() {
     let url = this.state.exUrl;
-    console.log(url);
-    window.open(url);
+    window.open(url, "_blank", "menubar=no, toolbar=no");
   }
 
   render() {
@@ -55,7 +54,7 @@ class Answer extends Component {
               showLineNumbers={false}
               startingLineNumber={true}
               wrapLongLines={true}
-              theme={nord}
+              theme={github}
               customStyle={{
                 width: "250px",
                 height: "250px",
