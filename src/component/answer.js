@@ -22,7 +22,8 @@ class Answer extends Component {
     let req = {
       id: this.props.id,
       question: this.state.chatValue,
-      path: "C:/FinTech_Solution/SP6_workspace/kit_test_project/WebContent/example_data",
+      // path: "C:/FinTech_Solution/SP6_workspace/kit_test_project/WebContent/example_data",
+      path: "/Users/jihyun/Desktop/working/websquare-workspace/test/WebContent/example_down",
     };
     axios
       .post("http://127.0.0.1:3000/chat/call/code", req)
