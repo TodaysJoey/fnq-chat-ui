@@ -1,13 +1,36 @@
-1. 시작
+<h1 align="center">Welcome to fnq-chat-ui 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="https://github.com/kyungriko/ui-chat#readme" target="_blank">
+    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/kyungriko/ui-chat/graphs/commit-activity" target="_blank">
+    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  </a>
+</p>
 
-## cd /ui-chat
+> 솔루션 API 설명과 예제 검색 챗봇 UI
 
-## npm start
+## Install
 
-2. 참고자료
-   a. 배열
+```sh
+npm install
+```
 
-- https://velog.io/@jjaa9292/React-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%B0%98%EB%B3%B5
+## Usage
 
-3. array.js
-   a. 질문 value 세팅하고 ajax로 답변받아오게 해놓은 곳
+```sh
+npm start
+```
+
+## Author
+
+👤 **고경리, 이지현, 오성원**
+
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
